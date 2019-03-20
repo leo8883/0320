@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display</p>
+<input type="number" id="score" value = 0>
+
+<button onclick="getResult()">click</button>
+
+<p id="result"></p>
+
+<script>
+function getResult() {
+  var score = document.getElementById("score").value; 
+  var word;
+  if (score < 60) {
+    word = "Bad";
+  } else {
+    word = "Good";
+  }
+  document.getElementById("result").innerHTML = word;
+  return word;
+}
+</script>
+
+</body>
+</html>
