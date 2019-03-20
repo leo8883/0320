@@ -2,20 +2,32 @@
 <html>
 <body>
 
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="myCanvas" width="600" height="400"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
 
+<button onclick="myFunction()">Try it</button>
 <script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-// Create gradient
-var grd = ctx.createLinearGradient(0,0,200,0);
-grd.addColorStop(0,"red");
-grd.addColorStop(1,"white");
-// Fill with gradient
-ctx.fillStyle = grd;
-ctx.fillRect(10,10,150,80);
+function myFunction() {
+  setInterval(move, 1000);
+}
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+var n =0;
+var i;
+function move(){  
+  for (i = 0; i < 10; i++) { 
+  ctx.fillRect(n,0,150,75);
+  n+=1;
+  ctx.clearRect(0, 0 , n, 75)
+}
+
+}
+
 </script>
 
 </body>
 </html>
+
