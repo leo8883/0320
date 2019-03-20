@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>calculator</h2>
+
+<script>
+	function add() {
+		var x, y;
+		x = document.getElementByid("num1").value;
+		y = document.getElementByid("num2").value;
+		document.getElementByid("calculate").innerHTML = x + y;
+	}
+	function subtract(num1,num2) {
+		return num1 - num2;
+	}
+	function multiply(num1,num2) {
+		return num1 * num2;
+	}
+	function divided(num1,num2) {
+		return num1 / num2;
+	}
+	
+</script>
+<form>
+First number:<br>
+<input type="number" id="num1" value = 0>
+<br>
+Last number:<br>
+<input type="number" id="num2" value = 0>
+<br>
+<button onclick="add()">add</button>
+<input type="reset">
+<br>
+Result:<br>
+<output id ="calculate">
+</form> 
+
+</body>
+</html>
