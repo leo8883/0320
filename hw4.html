@@ -2,30 +2,43 @@
 <html>
 <body>
 
-<canvas id="myCanvas" width="600" height="400"
-style="border:1px solid #c3c3c3;">
-Your browser does not support the canvas element.
+<canvas id="myCanvas" width="600" height="400" style="background: #ddffcc">
 </canvas>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="start()">Start</button>
 <script>
-function myFunction() {
-  setInterval(move, 1000);
+function start() {
+	setInterval(move, 5);
 }
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-var n =0;
+ctx.fillStyle = "#ff3300";
+ctx.fillRect(0,0,150,100)
+var x = 0;
+var y = 0;
 var i;
-function move(){  
-  for (i = 0; i < 10; i++) { 
-  ctx.fillRect(n,0,150,75);
-  n+=1;
-  ctx.clearRect(0, 0 , n, 75)
+function move(){	
+    if ((x < 450) && (y == 0)) {
+    	ctx.clearRect(0, 0, 600, 400);
+   		ctx.fillRect(x,0,150,100);
+    	x += 1;
+  	}
+  	if ((x == 450) && (y < 300)) {
+      	ctx.clearRect(0, 0, 600, 400);
+      	ctx.fillRect(450,y,150,100);
+      	y += 1;;
+    }
+    if ((x > 0) && (y == 300)) {
+      	ctx.clearRect(0, 0, 600, 400);
+      	ctx.fillRect(x,300,150,100);
+      	x-=1;
+    }
+    if ((x == 0) && (y > 0)) {
+      	ctx.clearRect(0, 0, 600, 400);
+      	ctx.fillRect(0,y,150,100);
+      	y-=1;
+    }
 }
-
-}
-
 </script>
 
 </body>
