@@ -3,40 +3,45 @@
 <head>
 	<title></title>
 </head>
-<body>
-<h2>calculator</h2>
-
 <script>
 	function add() {
 		var x, y;
-		x = document.getElementById("num1").value;
-		y = document.getElementById("num2").value;
+		x = parseFloat(document.getElementById("num1").value);
+		y = parseFloat(document.getElementById("num2").value);
 		document.getElementById("calculate").innerHTML = x + y;
 	}
-	function subtract(num1,num2) {
-		return num1 - num2;
+	function minus() {
+		var x, y;
+		x = parseFloat(document.getElementById("num1").value);
+		y = parseFloat(document.getElementById("num2").value);
+		document.getElementById("calculate").innerHTML = x - y;
 	}
-	function multiply(num1,num2) {
-		return num1 * num2;
+	function multiply() {
+		var x, y;
+		x = parseFloat(document.getElementById("num1").value);
+		y = parseFloat(document.getElementById("num2").value);
+		document.getElementById("calculate").innerHTML = x * y;
 	}
-	function divided(num1,num2) {
-		return num1 / num2;
+	function divide() {
+		var x, y;
+		x = parseFloat(document.getElementById("num1").value);
+		y = parseFloat(document.getElementById("num2").value);
+		document.getElementById("calculate").innerHTML = x / y;
 	}
 	
 </script>
-<form>
-First number:<br>
+
+<body>
+<h2>Calculator</h2>
+<p>First number:</p>
 <input type="number" id="num1" value = 0>
-<br>
-Last number:<br>
+<p>Last number:</p>
 <input type="number" id="num2" value = 0>
 <br>
 <button onclick="add()">add</button>
-<input type="reset">
-<br>
-Result:<br>
-<output id ="calculate">
-</form> 
-
+<button onclick="minus()">minus</button>
+<button onclick="multiply()">multiply</button>
+<button onclick="divide()">divide</button>
+<p>Result: <output id="calculate"></output></p>
 </body>
 </html>
